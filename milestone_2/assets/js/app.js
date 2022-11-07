@@ -1,10 +1,11 @@
-console.log('collegata');
+//console.log('collegata');
 
 const { createApp } = Vue;
 
 createApp({
     data(){
         return{
+            activeIndex: 0,
             contacts: [
                 {
                 name: 'Michele',
@@ -171,12 +172,18 @@ createApp({
         }
     },
     methods:{
+        selectIndex(index){
+            console.log('click');
+            this.activeIndex = index;
+            console.log(index);
+            console.log(this.activeIndex);
+        }
 
     },
     created(){
-        console.log('creata');
+//        console.log('creata');
     },
     mounted(){
-        console.log('montata');
+//        console.log('montata');
     },
 }).mount('#app')

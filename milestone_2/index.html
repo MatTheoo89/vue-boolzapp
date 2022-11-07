@@ -72,7 +72,8 @@
                 <div class="main-container-message">
 
                     <div
-                        v-for="(contact, name) in contacts"
+                        v-for="(contact, index) in contacts"
+                        @click="selectIndex(index)"
                         class="container-message">
 
                         <img :src="'assets/img/avatar'+contact.avatar+'.jpg'" :alt="'avatar di '+ contact.name">
@@ -93,7 +94,9 @@
 
                 <div class="header-right">
 
-                    <div class="avatar-name-status">
+                    <div
+                        
+                        class="avatar-name-status">
 
                         <img src="assets/img/avatar_1.jpg" alt="">
                         <div class="name-status">
@@ -112,12 +115,12 @@
                 </div>
 
                 <div class="message-area">
-                    <!-- :class="{'send' : contacts[index].status === 'sent'}" -->
-                    <!-- :class="{'recived' : contacts[index].status === 'received'}" -->
+                    <!-- :class="{'send' : contacts[index].messages[index].status === 'sent'}" -->
+                    <!-- :class="{'recived' : contacts[index].messages[index].status === 'received'}" -->
                     <div
-                    
+                        v-for="(message) in contacts[0].messages"
                         class="message">
-                        <p>Testo molto molto lungo</p>
+                        <p>{{message}}</p>
                         <span>12:00</span>
                     </div>
 
