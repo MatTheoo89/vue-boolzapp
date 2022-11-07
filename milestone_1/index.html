@@ -60,7 +60,11 @@
 
                         <i class="fa-solid fa-magnifying-glass"></i>
 
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="">
+                        <input 
+                            type="text"
+                            placeholder="Cerca o inizia una nuova chat">
+                            <!-- @keyup="contacts.name" -->
+                            <!-- v-model="contacts.name"> -->
 
                     </div>
                 </div>
@@ -108,8 +112,10 @@
                 </div>
 
                 <div class="message-area">
-
+                    <!-- :class="{'send' : contacts[index].status === 'sent'}" -->
+                    <!-- :class="{'recived' : contacts[index].status === 'received'}" -->
                     <div
+                    
                         class="message">
                         <p>Testo molto molto lungo</p>
                         <span>12:00</span>
