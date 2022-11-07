@@ -146,9 +146,9 @@ img {
 }
 
 .main-container-message {
-    width: 97%;
+    width: 99%;
     height: calc(100vh - 190px);
-    overflow: hidden;
+    overflow: auto;
 }
 
 .main-container-message .container-message {
@@ -179,6 +179,7 @@ img {
 
 .col-right {
     width: 70%;
+    min-width: 690px;
     height: 100%;
 }
 
@@ -200,6 +201,8 @@ img {
     background-image: url('../img/mine.jpg');
     background-position: center;
     height: calc(100% - 120px);
+    padding: 50px 70px;
+    overflow: auto;
 }
 
 .col-right .header-right .avatar-name-status {
@@ -224,10 +227,6 @@ img {
     padding-left: 15px;
     border: none;
     outline: none;
-}
-
-.message-area {
-    padding: 50px 70px;
 }
 
 .message {
