@@ -98,9 +98,10 @@
                         
                         class="avatar-name-status">
 
-                        <img src="assets/img/avatar_1.jpg" alt="">
+                        <img :src="'assets/img/avatar'+contacts[activeIndex].avatar+'.jpg'" :alt="'avatar di '+ contacts[activeIndex].name">
+
                         <div class="name-status">
-                            <span class="name-user">Michele</span>
+                            <span class="name-user">{{contacts[activeIndex].name}}</span>
                             <span class="status">Ultimo accesso oggi alle 12:00</span>
                         </div>
                     </div>
@@ -118,7 +119,7 @@
                     <!-- :class="{'send' : contacts[index].messages[index].status === 'sent'}" -->
                     <!-- :class="{'recived' : contacts[index].messages[index].status === 'received'}" -->
                     <div
-                        v-for="(message) in contacts[0].messages"
+                        v-for="(message) in contacts[activeIndex].messages"
                         class="message">
                         <p>{{message}}</p>
                         <span>12:00</span>
