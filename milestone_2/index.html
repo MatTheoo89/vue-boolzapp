@@ -107,11 +107,13 @@
                     </div>
 
                     <div class="header-icons">
+
                         <i class="fa-solid fa-magnifying-glass"></i>
 
                         <i class="fa-solid fa-paperclip"></i>
 
                         <i class="fa-solid fa-ellipsis-vertical"></i>
+
                     </div>
                 </div>
 
@@ -119,7 +121,7 @@
                     <!-- :class="{'send' : contacts[index].messages[index].status === 'sent'}" -->
                     <!-- :class="{'recived' : contacts[index].messages[index].status === 'received'}" -->
                     <div
-                        v-for="(message) in contacts[activeIndex].messages"
+                        v-for="(message,) in contacts[activeIndex].messages.message"
                         class="message">
                         <p>{{message}}</p>
                         <span>12:00</span>
