@@ -236,6 +236,7 @@ img {
     max-width: 40%;
     padding: 10px 15px;
     border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .message.send {

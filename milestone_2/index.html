@@ -118,13 +118,13 @@
                 </div>
 
                 <div class="message-area">
-                    <!-- :class="{'send' : contacts[index].messages[index].status === 'sent'}" -->
-                    <!-- :class="{'recived' : contacts[index].messages[index].status === 'received'}" -->
+                    <!-- Formulina (ricerca google: https://michaelnthiessen.com/conditional-class-binding-vue ) con ternario per assegnare le due classi -->
                     <div
-                        v-for="(message,) in contacts[activeIndex].messages.message"
+                        v-for="singleMsg in contacts[activeIndex].messages"
+                        :class="singleMsg.status === 'sent' ? 'send' : 'recived'"
                         class="message">
-                        <p>{{message}}</p>
-                        <span>12:00</span>
+                        <p>{{singleMsg.message}}</p>
+                        <span>{{singleMsg.date.substr(11, 5)}}</span>
                     </div>
 
                 </div>
