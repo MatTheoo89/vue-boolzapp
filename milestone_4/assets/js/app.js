@@ -199,13 +199,16 @@ createApp({
             this.contacts[this.activeIndex].messages.push(autoMsg);
         },
         filteredContacts(){
-            /*
-            deve cercare la stringa SEARCH nei CONTACTS.NAME e restituire i CONTACTS che contengono quelle lettere
-            */
-            const letters = this.search.split('');
-            const contacts = this.contacts;
 
-            return console.log(letters, contacts); 
+            this.contacts.map((item) => {
+                if(item.name.toLowerCase().includes(this.search.toLowerCase())){
+                    item.visible = true;
+                }
+                else{
+                    item.visible = false;
+                }
+                return item
+            })
         },
         },
         created(){

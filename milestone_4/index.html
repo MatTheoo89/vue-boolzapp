@@ -72,6 +72,7 @@
 
                     <div
                         v-for="(contact, index) in contacts"
+                        v-show="contact.visible"
                         @click="selectIndex(index)"
                         :class="{'active' : index === activeIndex} "
                         class="container-message">
