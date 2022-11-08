@@ -148,7 +148,7 @@ img {
 
 .main-container-message {
     width: 99%;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 210px);
     overflow: auto;
 }
 
