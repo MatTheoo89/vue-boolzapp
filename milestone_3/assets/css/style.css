@@ -239,12 +239,12 @@ img {
     margin-bottom: 15px;
 }
 
-.message.send {
+.message.sent {
     margin-left: auto;
     background-color: #80ed99;
 }
 
-.message.recived {
+.message.received {
     margin-right: auto;
     background-color: #fcfcfc;
 }

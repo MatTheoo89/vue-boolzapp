@@ -184,7 +184,7 @@ createApp({
             const newMsg = {
                 date: this.msgDate.toLocaleDateString() + ' ' + this.msgDate.toLocaleTimeString(),
                 message: this.valueNewMsg,
-                status: 'send'
+                status: 'sent'
             }
             this.contacts[this.activeIndex].messages.push(newMsg);
             setTimeout(this.autoresponse,1000);
@@ -194,7 +194,7 @@ createApp({
             const autoMsg = {
                 date: this.msgDate.toLocaleDateString() + ' ' + this.msgDate.toLocaleTimeString(),
                 message: 'Top! Ci sei riuscito!!!',
-                status: 'recived',
+                status: 'received',
             };
             this.contacts[this.activeIndex].messages.push(autoMsg);
         },
