@@ -121,7 +121,7 @@
                     <!-- Formulina (ricerca google: https://michaelnthiessen.com/conditional-class-binding-vue ) con ternario per assegnare le due classi -->
                     <div
                         v-for="singleMsg in contacts[activeIndex].messages"
-                        :class="singleMsg.status != 'sent' ? 'send' : 'recived'"
+                        :class="singleMsg.status === 'send' ? 'send' : 'recived'"
                         class="message">
                         <p>{{singleMsg.message}}</p>
                         <span>{{singleMsg.date.substr(11, 5)}}</span>

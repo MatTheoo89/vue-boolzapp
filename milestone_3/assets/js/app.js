@@ -7,6 +7,7 @@ createApp({
         return{
             activeIndex: 0,
             valueNewMsg: '',
+            msgDate: new Date(),
             contacts: [
                 {
                 name: 'Michele',
@@ -181,18 +182,32 @@ createApp({
         },
         createMessage(){
             const newMsg = {
-                date: '',
+                date: this.msgDate.toLocaleDateString() + ' ' + this.msgDate.toLocaleTimeString(),
                 message: this.valueNewMsg,
                 status: 'send'
-                }
-                this.contacts[this.activeIndex].messages.push(newMsg)
+            }
+            this.contacts[this.activeIndex].messages.push(newMsg);
+            setTimeout(this.autoresponse,1000);
                 this.valueNewMsg = '';
             },
+        autoresponse(){
+            const autoMsg = {
+                date: this.msgDate.toLocaleDateString() + ' ' + this.msgDate.toLocaleTimeString(),
+                message: 'Top! Ci sei riuscito!!!',
+                status: 'recived',
+            };
+            this.contacts[this.activeIndex].messages.push(autoMsg);
+        },
         },
         created(){
-//        console.log('creata');
-    },
-    mounted(){
-//        console.log('montata');
+            //        console.log('creata');
+        },
+        mounted(){
+            //        console.log('montata');
+            
     },
 }).mount('#app')
+
+
+// const d = new Date();
+// console.log(this.msgDate.toLocaleDateString() + ' ' + this.msgDate.toLocaleTimeString());
