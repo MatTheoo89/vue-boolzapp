@@ -74,6 +74,7 @@
                     <div
                         v-for="(contact, index) in contacts"
                         @click="selectIndex(index)"
+                        :class="{'active' : index === activeIndex} "
                         class="container-message">
 
                         <img :src="'assets/img/avatar'+contact.avatar+'.jpg'" :alt="'avatar di '+ contact.name">
@@ -121,10 +122,10 @@
                     <!-- Formulina (ricerca google: https://michaelnthiessen.com/conditional-class-binding-vue ) con ternario per assegnare le due classi -->
                     <div
                         v-for="singleMsg in contacts[activeIndex].messages"
-                        :class="singleMsg.status === 'sent' ? 'sent' : 'received'"
+                        :class="singleMsg.status"
                         class="message">
                         <p>{{singleMsg.message}}</p>
-                        <span>{{singleMsg.date.substr(11, 5)}}</span>
+                        <span>{{singleMsg.date.substr(10, 6)}}</span>
                     </div>
 
                 </div>

@@ -8,6 +8,7 @@ createApp({
             activeIndex: 0,
             valueNewMsg: '',
             msgDate: new Date(),
+            search:'',
             contacts: [
                 {
                 name: 'Michele',
@@ -178,7 +179,6 @@ createApp({
             // console.log('click');
             this.activeIndex = index;
             // console.log(index);
-            // console.log(this.activeIndex);
         },
         createMessage(){
             const newMsg = {
@@ -207,7 +207,3 @@ createApp({
             
     },
 }).mount('#app')
-
-
-// const d = new Date();
-// console.log(this.msgDate.toLocaleDateString() + ' ' + this.msgDate.toLocaleTimeString());
