@@ -8,7 +8,7 @@ createApp({
             activeIndex: 0,
             valueNewMsg: '',
             msgDate: new Date(),
-            search:'',
+            search:[],
             contacts: [
                 {
                 name: 'Michele',
@@ -198,12 +198,17 @@ createApp({
             };
             this.contacts[this.activeIndex].messages.push(autoMsg);
         },
+        filteredContacts(){
+            /*
+            deve cercare la stringa SEARCH nei CONTACTS.NAME e restituire i CONTACTS che contengono quelle lettere
+            */
+            return console.log('premuto'); 
+        },
         },
         created(){
             //        console.log('creata');
         },
         mounted(){
             //        console.log('montata');
-            
     },
 }).mount('#app')
