@@ -202,9 +202,10 @@ createApp({
             /*
             deve cercare la stringa SEARCH nei CONTACTS.NAME e restituire i CONTACTS che contengono quelle lettere
             */
-            const letter = this.search.split('');
+            const letters = this.search.split('');
+            const contacts = this.contacts;
 
-            return console.log(letter); 
+            return console.log(letters, contacts); 
         },
         },
         created(){
