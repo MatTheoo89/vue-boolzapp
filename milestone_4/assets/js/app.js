@@ -8,7 +8,7 @@ createApp({
             activeIndex: 0,
             valueNewMsg: '',
             msgDate: new Date(),
-            search:[],
+            search:'',
             contacts: [
                 {
                 name: 'Michele',
@@ -202,7 +202,9 @@ createApp({
             /*
             deve cercare la stringa SEARCH nei CONTACTS.NAME e restituire i CONTACTS che contengono quelle lettere
             */
-            return console.log('premuto'); 
+            const letter = this.search.split('');
+
+            return console.log(letter); 
         },
         },
         created(){
