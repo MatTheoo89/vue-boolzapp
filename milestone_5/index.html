@@ -85,10 +85,10 @@
 
                             <span class="name-user-message">{{contact.name}}</span>
 
-                            <span class="last-send-message">Ultimo messaggio inviato</span>
+                            <span class="last-send-message">{{lastMessage(index)}}</span>
                         </div>
 
-                        <span class="hours-message">12.00</span>
+                        <span class="hours-message">{{lastDate(index)}}</span>
                     </div>
                 </div>
             </div>
@@ -105,7 +105,8 @@
 
                         <div class="name-status">
                             <span class="name-user">{{contacts[activeIndex].name}}</span>
-                            <span class="status">Ultimo accesso oggi alle 12:00</span>
+                            <span
+                                class="status">Ultimo accesso oggi alle {{contacts[activeIndex].messages[0].date.substr(11, 5)}}</span>
                         </div>
                     </div>
 

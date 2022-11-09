@@ -215,6 +215,16 @@ createApp({
                 return item
             })
         },
+        lastDate(index){
+            const lastDate = this.contacts[index].messages.length;
+            console.log(lastDate);
+            return this.contacts[index].messages[lastDate - 1].date.substr(11, 5);
+        },
+        lastMessage(index){
+            const lastMsg = this.contacts[index].messages.length;
+            
+            return this.contacts[index].messages[lastMsg - 1].message
+        },
         },
         created(){
             //        console.log('creata');
