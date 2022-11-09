@@ -217,7 +217,7 @@ createApp({
         },
         lastDate(index){
             const lastDate = this.contacts[index].messages.length;
-            console.log(lastDate);
+            //console.log(lastDate);
             return this.contacts[index].messages[lastDate - 1].date.substr(11, 5);
         },
         lastMessage(index){
