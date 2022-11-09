@@ -1,4 +1,9 @@
 //console.log('collegata');
+const DateTime = luxon.DateTime;
+
+const now = DateTime.now().toFormat("dd'/'LL'/'yyyy' 'HH':'mm':'ss");
+
+const dateMsg = now.toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
 
 const { createApp } = Vue;
 
@@ -182,7 +187,7 @@ createApp({
         },
         createMessage(){
             const newMsg = {
-                date: this.msgDate.toLocaleDateString() + ' ' + this.msgDate.toLocaleTimeString(),
+                date: dateMsg,
                 message: this.valueNewMsg,
                 status: 'sent'
             }
@@ -192,7 +197,7 @@ createApp({
             },
         autoresponse(){
             const autoMsg = {
-                date: this.msgDate.toLocaleDateString() + ' ' + this.msgDate.toLocaleTimeString(),
+                date: dateMsg,
                 message: 'Top! Ci sei riuscito!!!',
                 status: 'received',
             };
