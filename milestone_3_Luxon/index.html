@@ -7,7 +7,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js" integrity="sha256-Gf7owtNug1Hx/SyBFHX+wOBCo6BH4ucEyTZOD+85yNA=" crossorigin="anonymous"></script>
     
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous'/>
     
@@ -62,17 +64,17 @@
 
                         <input 
                             type="text"
-                            placeholder="Cerca o inizia una nuova chat"
-                            v-model="search"
-                            @keyup="filteredContacts()">
+                            placeholder="Cerca o inizia una nuova chat">
+                            <!-- @keyup="contacts.name" -->
+                            <!-- v-model="contacts.name"> -->
+
                     </div>
                 </div>
 
                 <div class="main-container-message">
 
                     <div
-                        v-for="(contact, index) in contacts"
-                        v-show="contact.visible"
+                        v-for="(contact, index, message, iMsg) in contacts"
                         @click="selectIndex(index)"
                         :class="{'active' : index === activeIndex} "
                         class="container-message">
@@ -86,7 +88,7 @@
                             <span class="last-send-message">Ultimo messaggio inviato</span>
                         </div>
 
-                        <span class="hours-message">12.00</span>
+                        <span class="hours-message">{{contact.messages.length}}</span>
                     </div>
                 </div>
             </div>
@@ -124,9 +126,8 @@
                         v-for="singleMsg in contacts[activeIndex].messages"
                         :class="singleMsg.status"
                         class="message">
-
                         <p>{{singleMsg.message}}</p>
-                        <span>{{singleMsg.date.substr(10, 6)}}</span>
+                        <span>{{singleMsg.date.substr(11, 5)}}</span>
                     </div>
 
                 </div>

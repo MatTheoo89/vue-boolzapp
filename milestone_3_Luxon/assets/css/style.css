@@ -206,15 +206,6 @@ img {
     overflow: auto;
 }
 
-.message-area i {
-    text-align: right;
-    margin-bottom: 2px;
-}
-
-.drop-down {
-    background-color: #e2e1e1;
-}
-
 .col-right .header-right .avatar-name-status {
     display: flex;
 }
