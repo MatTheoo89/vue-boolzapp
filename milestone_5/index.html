@@ -106,8 +106,7 @@
                         <div class="name-status">
                             <span class="name-user">{{contacts[activeIndex].name}}</span>
                             <span
-                                v-for="(i) in contacts[activeIndex].messages"
-                                class="status">Ultimo accesso alle {{i.date.substr(11, 5)}}</span>
+                                class="status">Ultimo accesso alle {{lastDate(activeIndex)}}</span>
                         </div>
                     </div>
 
