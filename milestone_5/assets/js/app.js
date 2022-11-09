@@ -231,5 +231,7 @@ createApp({
         },
         mounted(){
             //        console.log('montata');
-    },
-}).mount('#app')
+            console.log(this.contacts[0].messages[1].date);
+        },
+    }).mount('#app')
+    
